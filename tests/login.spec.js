@@ -5,6 +5,7 @@ test('Login', async({page})=>{
    await page.locator('#password').fill('Adactin@123');
    await page.locator('#login').click();
    await page.waitForTimeout(5000);
+   await expect(page.locator('.login_title')).toContainText('Search Hotel');
 });
 
 

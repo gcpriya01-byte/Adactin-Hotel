@@ -7,6 +7,7 @@ await page.goto('https://adactinhotelapp.com/');
    await page.locator('#password').fill('Adactin@123');
    await page.locator('#login').click();
    await page.waitForTimeout(5000);
+   await expect(page.locator('.login_title')).toContainText('Search Hotel');
 //Search Hotel
 await page.locator('#location').selectOption({label:'Melbourne'}); 
 await expect(page.locator('#location')).toHaveValue('Melbourne');
@@ -19,4 +20,6 @@ await page.locator('#adult_room').selectOption('3');
 await page.locator('#child_room').selectOption('2')
 await page.locator('#Submit').click();
 await page.waitForTimeout(5000);
+await expect(page.locator('.login_title')).toContainText('Select Hotel ');
+
 });

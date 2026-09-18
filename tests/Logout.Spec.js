@@ -8,4 +8,5 @@ test('Login', async({page})=>{
 //logout
    await page.getByRole('link', { name: 'Logout' }).click();
 await page.waitForTimeout(8000);
+await expect(page.locator('.reg_success')).toContainText('You have successfully logged out.');
 });
