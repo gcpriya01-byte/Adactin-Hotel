@@ -1,26 +1,38 @@
+import Utils from '../utils/Utils';
 export class BookHotelPage {
     constructor(page) {
         this.page = page;
-        this.firstname=page.locator('#first_name');
-         this.lastname=page.locator('#last_name');
-         this.Billingaddress=page.locator('#address');
-         this.creditcardnumber=page.locator('#cc_num');
-         this.creditcardtype=page.locator('#cc_type');
-         this.expirydateMonth=page.locator('#cc_exp_month');
-         this.expirydateYear=page.locator('#cc_exp_year');
-        this.cvvnumber=page.locator('#cc_cvv');
-         this.booknowbutton=page.locator('#book_now');
+        this.utils = new Utils(page);
+        // Locators
+        this.firstName = page.locator('#first_name');
+        this.lastName = page.locator('#last_name');
+        this.billingAddress = page.locator('#address');
+        this.creditCardNumber = page.locator('#cc_num');
+        this.creditCardType = page.locator('#cc_type');
+        this.expiryMonth = page.locator('#cc_exp_month');
+        this.expiryYear = page.locator('#cc_exp_year');
+        this.cvvNumber = page.locator('#cc_cvv');
+        this.bookNowButton = page.locator('#book_now');
     }
-    async bookHotelPage()
-    {
-        await this.firstname.fill('Priya');
-        await this.lastname.fill('gcp');
-        await this.Billingaddress.fill('Melbourne','Vic');
-        await this.creditcardnumber.fill('1234567890123456');
-        await this.creditcardtype.selectOption('VISA');
-        await this.expirydateMonth.selectOption('May');
-        await this.expirydateYear.selectOption('2026');
-        await this.cvvnumber.fill('678');
-        await this.booknowbutton.click();
-        await this.page.waitForTimeout(8000);
-    }};
+    // Book Hotel method
+    async bookHotel(data) {
+        // Enter First Name
+        await this.utils.fill(this.firstName,data.firstName);
+        // Enter Last Name
+        await this.utils.fill(this.lastName,data.lastName);
+        // Enter Billing Address
+        await this.utils.fill(this.billingAddress,data.billingAddress);
+        // Enter Credit Card Number
+        await this.utils.fill(this.creditCardNumber,data.creditCardNumber);
+        // Select Credit Card Type
+        await this.utils.selectOption(this.creditCardType,data.creditCardType);
+        // Select Expiry Month
+        await this.utils.selectOption(this.expiryMonth,data.expiryMonth);
+        // Select Expiry Year
+        await this.utils.selectOption(this.expiryYear,data.expiryYear);
+        // Enter CVV
+        await this.utils.fill(this.cvvNumber,data.cvvNumber);
+        // Click Book Now
+        await this.utils.click(this.bookNowButton);
+    }
+}

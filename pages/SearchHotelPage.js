@@ -1,26 +1,29 @@
-exports.SearchHotelPage= class SearchHotelPage {
+import Utils from '../utils/Utils';
+export class SearchHotelPage {
     constructor(page) {
         this.page = page;
+        this.utils = new Utils(page);
+        // Locators
         this.location = page.locator('#location');
-        this.hotels = page. locator('#hotels');
-        this.roomtype = page.locator('#room_type');
-        this.numberofrooms = page. locator('#room_nos');
-        this.checkindate=page.locator('#datepick_in');
-        this.checkoutdate=page.locator('#datepick_out');
-        this.adultsperroom=page.locator('#adult_room');
-        this.childrenperroom=page.locator('#child_room');
-        this.searchbutton=page.locator('#Submit');     
+        this.hotel = page.locator('#hotels');
+        this.roomType = page.locator('#room_type');
+        this.numberOfRooms = page.locator('#room_nos');
+        this.checkInDate = page.locator('#datepick_in');
+        this.checkOutDate = page.locator('#datepick_out');
+        this.adults = page.locator('#adult_room');
+        this.children = page.locator('#child_room');
+        this.searchButton = page.locator('#Submit');
     }
-   async searchHotel()
-{
-    await this.location.selectOption('Melbourne');
-    await this.hotels.selectOption('Hotel Creek');
-    await this.roomtype.selectOption('Double');
-    await this.numberofrooms.selectOption({index:2});
-    await this.checkindate.fill('03/11/2026');
-    await this.checkoutdate.fill('13/11/2026');
-    await this.adultsperroom.selectOption('3');
-    await this.childrenperroom.selectOption('2');
-    await this.searchbutton.click();
+    // Search Hotel method
+    async searchHotel(data) {
+        await this.utils.selectOption( this.location, data.location);
+        await this.utils.selectOption(this.hotel,data.hotel);
+        await this.utils.selectOption(this.roomType,data.roomType);
+        await this.utils.selectOption(this.numberOfRooms,data.numberOfRooms);
+        await this.utils.fill(this.checkInDate,data.checkInDate);
+        await this.utils.fill(this.checkOutDate,data.checkOutDate);
+        await this.utils.selectOption(this.adults,data.adultsPerRoom);
+        await this.utils.selectOption(this.children,data.childrenPerRoom);
+        await this.utils.click(this.searchButton);
+    }
 }
-};

@@ -1,12 +1,14 @@
-exports.LogoutPage=
-class LogoutPage {
-    constructor(page){
-        this.page=page;
-        this.logoutlink=page.locator('#logout');
-    }
-    async logoutpage()
-    {
-        await this.logoutlink.click();
+import Utils from '../utils/Utils';
+
+export class LogoutPage {
+
+    constructor(page) {
+        this.page = page;
+        this.utils = new Utils(page);
+        this.logoutLink = page.getByRole('link', { name: 'Logout' });
     }
 
+    async logout() {
+        await this.utils.click(this.logoutLink);
     }
+}

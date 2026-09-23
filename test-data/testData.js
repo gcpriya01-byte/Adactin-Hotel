@@ -1,11 +1,9 @@
 exports.testData = {
-
     // Login data
     login: {
         username: 'priyagcp',
         password: 'Adactin@123'
     },
-
     // Search Hotel data
     searchHotel: {
         location: 'Melbourne',
@@ -17,7 +15,6 @@ exports.testData = {
         adultsPerRoom: '3',
         childrenPerRoom: '2'
     },
-
     // Select Hotel data
     selectHotel: {
         hotel: 'Hotel Creek',
@@ -30,7 +27,6 @@ exports.testData = {
         pricePerNight: 'AUD $ 225',
         totalPriceExclGST: 'AUD $ 260'
     },
-
     // Book Hotel data
     booking: {
         firstName: 'Priya',
