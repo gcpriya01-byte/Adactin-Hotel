@@ -1,6 +1,6 @@
 import Utils from '../utils/Utils';
 
-export class LoginPage {
+class LoginPage {
 
     constructor(page) {
 
@@ -19,3 +19,4 @@ export class LoginPage {
                     await this.utils.click(this.loginButton);
     }
 }
+export default LoginPage;

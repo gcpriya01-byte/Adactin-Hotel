@@ -1,5 +1,5 @@
 import Utils from '../utils/Utils';
-export class BookHotelPage {
+ class BookHotelPage {
     constructor(page) {
         this.page = page;
         this.utils = new Utils(page);
@@ -36,3 +36,4 @@ export class BookHotelPage {
         await this.utils.click(this.bookNowButton);
     }
 }
+export default BookHotelPage;

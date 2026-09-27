@@ -1,9 +1,19 @@
-exports.testData = {
+const testData = {
+
     // Login data
     login: {
         username: 'priyagcp',
         password: 'Adactin@123'
     },
+
+    // Negative Login data
+    negativeLogin: {
+    invalidUsername: 'invaliduser',
+    invalidPassword: 'wrongpassword',
+    emptyUsername: '',
+    emptyPassword: ''
+    },
+
     // Search Hotel data
     searchHotel: {
         location: 'Melbourne',
@@ -15,6 +25,19 @@ exports.testData = {
         adultsPerRoom: '3',
         childrenPerRoom: '2'
     },
+
+    // Negative Search data
+   negativeSearch: {
+    emptyLocation: '',
+    emptyHotel: '',
+    emptyRoomType: '',
+    emptyNumberOfRooms: '',
+    emptyCheckInDate: '',
+    emptyCheckOutDate: '',
+    emptyAdultsPerRoom: '',
+    emptyChildrenPerRoom: ''
+    },
+
     // Select Hotel data
     selectHotel: {
         hotel: 'Hotel Creek',
@@ -27,6 +50,7 @@ exports.testData = {
         pricePerNight: 'AUD $ 225',
         totalPriceExclGST: 'AUD $ 260'
     },
+
     // Book Hotel data
     booking: {
         firstName: 'Priya',
@@ -37,5 +61,16 @@ exports.testData = {
         expiryMonth: 'May',
         expiryYear: '2026',
         cvvNumber: '678'
+    },
+
+    // Negative Booking data
+  negativeBooking: {
+    emptyFirstName: '',
+    emptyLastName: '',
+    emptyBillingAddress: '',
+    invalidCreditCardNumber: '123',
+    invalidCvvNumber: '12'
     }
 };
+
+export default testData;

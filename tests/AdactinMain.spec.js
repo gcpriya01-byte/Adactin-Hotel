@@ -1,10 +1,11 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { SearchHotelPage } from '../pages/SearchHotelPage';
-import { SelectHotelPage } from '../pages/SelectHotelPage';
-import { BookHotelPage } from '../pages/BookHotelPage';
-import { LogoutPage } from '../pages/LogoutPage';
-import { testData } from '../Test-data/testData';
+
+import LoginPage from '../pages/LoginPage.js';
+import SearchHotelPage from '../pages/SearchHotelPage.js';
+import SelectHotelPage from '../pages/SelectHotelPage.js';
+import BookHotelPage from '../pages/BookHotelPage.js';
+import LogoutPage from '../pages/LogoutPage.js';
+import testData from '../test-data/testData.js';
 test('Adactin Hotel End-to-End Booking', async ({ page }) => {
     // Open application
     await page.goto('https://adactinhotelapp.com/');
@@ -35,5 +36,5 @@ test('Adactin Hotel End-to-End Booking', async ({ page }) => {
     const logoutPage = new LogoutPage(page);
     await logoutPage.logout();
 
-            await page.waitForTimeout(8000);
+    await page.waitForTimeout(8000);
 });

@@ -1,5 +1,5 @@
 import Utils from '../utils/Utils';
-export class SelectHotelPage {
+ class SelectHotelPage {
     constructor(page) {
         this.page = page;
         this.utils = new Utils(page);
@@ -19,3 +19,4 @@ export class SelectHotelPage {
         await this.utils.click(this.continueButton);
     }
 }
+export default SelectHotelPage;

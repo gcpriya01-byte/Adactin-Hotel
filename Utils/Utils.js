@@ -20,6 +20,24 @@ class Utils {
 
     // Wait for specified time
     async wait(milliseconds) {await this.page.waitForTimeout(milliseconds); }
-         }
+         
+
+   // Verify element is visible
+    async verifyVisible(locator) {await expect(locator).toBeVisible();
+    }
+
+    // Verify element is not visible
+    async verifyNotVisible(locator) {await expect(locator).toBeHidden();
+    }
+
+    // Verify input field is empty
+    async verifyEmpty(locator) {await expect(locator).toHaveValue('');
+    }
+
+    // Verify error message
+    async verifyErrorMessage(locator, message) {await expect(locator).toContainText(message);
+    }
+}
+
 
 export default Utils;
