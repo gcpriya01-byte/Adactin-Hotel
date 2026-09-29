@@ -8,8 +8,8 @@ const testData = {
 
     // Negative Login data
     negativeLogin: {
-    invalidUsername: 'invaliduser',
-    invalidPassword: 'wrongpassword',
+    invalidUsername: 'priya',
+    invalidPassword: '123',
     emptyUsername: '',
     emptyPassword: ''
     },

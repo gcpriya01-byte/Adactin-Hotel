@@ -1,5 +1,4 @@
-import Utils from '../utils/Utils';
-
+import Utils from '../Utils/Utils.js';
  class LogoutPage {
 
     constructor(page) {

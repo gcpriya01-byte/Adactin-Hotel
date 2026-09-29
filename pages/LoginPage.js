@@ -1,4 +1,4 @@
-import Utils from '../utils/Utils';
+import Utils from '../Utils/Utils.js';
 
 class LoginPage {
 
@@ -15,8 +15,8 @@ class LoginPage {
 
     // Login method
     async login(username, password) { await this.utils.fill(this.username,username );
-                    await this.utils.fill(this.password,password);
-                    await this.utils.click(this.loginButton);
+                                      await this.utils.fill(this.password,password);
+                                      await this.utils.click(this.loginButton);
     }
 }
 export default LoginPage;

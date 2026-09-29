@@ -1,4 +1,4 @@
-import Utils from '../utils/Utils';
+import Utils from '../Utils/Utils.js';
  class SelectHotelPage {
     constructor(page) {
         this.page = page;
@@ -9,12 +9,10 @@ import Utils from '../utils/Utils';
         this.continueButton = page.locator('#continue');
     }
 
-    // Select Hotel method
-    async selectHotel(data) {
-
+       // Select Hotel method
+       async selectHotel(data) {
         // Select hotel 
         await this.utils.check(this.hotelRadioButton);
-
         // Click Continue
         await this.utils.click(this.continueButton);
     }

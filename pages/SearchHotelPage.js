@@ -1,4 +1,4 @@
-import Utils from '../utils/Utils';
+import Utils from '../Utils/Utils.js';
 class SearchHotelPage {
     constructor(page) {
         this.page = page;
